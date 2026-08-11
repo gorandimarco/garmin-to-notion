@@ -308,7 +308,7 @@ if activities:
     print(activities[0])
 print("=== END TEST ===")
 
-    # Process all activities
+# Process all activities
     for activity in activities:
         activity_date_raw: str = activity.get('startTimeGMT')
         activity_date: datetime = (
