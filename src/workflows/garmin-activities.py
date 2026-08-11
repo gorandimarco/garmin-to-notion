@@ -302,6 +302,11 @@ def main():
 
     # Get all activities
     activities = get_all_activities(garmin_client, garmin_configuration.activity_fetch_limit)
+    
+print("=== GARMIN ACTIVITY TEST ===")
+if activities:
+    print(activities[0])
+print("=== END TEST ===")
 
     # Process all activities
     for activity in activities:
