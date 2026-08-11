@@ -18,7 +18,6 @@ def format_duration(seconds: float) -> float:
     """Convertit les secondes en minutes."""
     return round(seconds / 60, 2) if seconds else 0
 
-```python
 def get_data_source_id(
     notion_client: NotionClient,
     database_id: str,
