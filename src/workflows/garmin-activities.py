@@ -37,7 +37,6 @@ def get_data_source_id(
         )
 
     return data_sources[0]["id"]
-```
 
     """Récupère automatiquement la première data source de la database."""
 
