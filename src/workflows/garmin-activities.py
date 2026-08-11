@@ -35,7 +35,11 @@ ACTIVITY_ICONS = {
 
 def get_all_activities(garmin_client: GarminClient, limit: int = 1000) -> list[dict]:
     return garmin_client.get_activities(0, limit)
-
+    
+print("=== GARMIN ACTIVITY TEST ===")
+if activities:
+    print(activities[0])
+    print("=== END TEST ===")
 
 def format_activity_type(activity_type: str, activity_name: str = "") -> tuple[str, str]:
     # First format the activity type as before
