@@ -18,11 +18,28 @@ def format_duration(seconds: float) -> float:
     """Convertit les secondes en minutes."""
     return round(seconds / 60, 2) if seconds else 0
 
-
+```python
 def get_data_source_id(
     notion_client: NotionClient,
     database_id: str,
 ) -> str:
+    """Récupère la data source associée à la database Notion."""
+
+    response = notion_client.request(
+        path=f"data_sources?database_id={database_id}",
+        method="GET",
+    )
+
+    data_sources = response.get("results", [])
+
+    if not data_sources:
+        raise ValueError(
+            f"Aucune data source trouvée pour la database {database_id}."
+        )
+
+    return data_sources[0]["id"]
+```
+
     """Récupère automatiquement la première data source de la database."""
 
     database = notion_client.request(
